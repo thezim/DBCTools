@@ -1,0 +1,84 @@
+VERSION "HIPBNYYYYYYYYYYYYYYYYYYYYYYYYYYYNNNNNNNNNN/4/%%%/4/'%**4NNN///"
+
+NS_ :
+ CM_
+ BA_DEF_
+ BA_
+ VAL_
+ CAT_DEF_
+ CAT_
+ FILTER
+ BA_DEF_DEF_
+ EV_DATA_
+ SGTYPE_
+ SGTYPE_VAL_
+ BA_DEF_SGTYPE_
+ BA_SGTYPE_
+ SIG_TYPE_REF_
+ VAL_TABLE_ 
+
+BS_:
+
+BU_: VBOX_II
+
+
+BO_ 773 VBOX_5: 8 VBOX_II
+ SG_ Trig_Vel : 55|16@0+ (0.01,0) [0|655.35] "Knots" Vector__XXX
+ SG_ Trig_time : 39|16@0+ (0.05,0) [0|3276.75] "Secs" Vector__XXX
+ SG_ Distance : 7|32@0+ (7.8125E-05,0) [0|335544] "Metres" Vector__XXX 
+ 
+BO_ 772 VBOX_4: 8 VBOX_II
+ SG_ Lateral_acceleration : 55|16@0- (0.01,0) [-327.68|327.67] "G"  VBOX_II
+ SG_ Longitudinal_acceleration : 39|16@0- (0.01,0) [-327.68|327.67] "G"  VBOX_II
+ SG_ Trig_Dist : 7|32@0+ (7.8125E-05,0) [0|335544] "metres"  VBOX_II
+
+BO_ 771 VBOX_3: 8 VBOX_II
+ SG_ DGPS : 61|1@0+ (1,0) [0|0] "On"  VBOX_II
+ SG_ Brake_trigger : 60|1@0+ (1,0) [0|0] "On"  VBOX_II
+ SG_ Vertical_Velocity : 31|16@0- (0.01,0) [0|655.36] "m/s"  VBOX_II
+ SG_ Altitude : 7|24@0- (0.01,0) [0|42949700] "metres"  VBOX_II
+
+BO_ 770 VBOX_2: 8 VBOX_II
+ SG_ Heading : 55|16@0+ (0.01,0) [0|359.99] "Degrees"  VBOX_II
+ SG_ Velocity : 39|16@0+ (0.01,0) [0|655.36] "Knots"  VBOX_II
+ SG_ East_West : 7|1@0+ (1,0) [0|0] "East"  VBOX_II
+ SG_ Longitude : 6|31@0+ (1E-05,0) [0|180] "Degrees"  VBOX_II
+
+BO_ 769 VBOX_1: 8 VBOX_II
+ SG_ North_South : 39|1@0+ (1,0) [0|0] "South"  VBOX_II
+ SG_ Latitude : 38|31@0+ (1E-05,0) [0|90] "Degrees"  VBOX_II
+ SG_ Time : 15|24@0+ (1,0) [0|0] "UTC"  VBOX_II
+ SG_ Sats : 7|8@0+ (1,0) [0|12] "Sats"  VBOX_II
+
+
+CM_ "Racelogic VBOX II";
+
+CM_ SG_ 772 Lateral_acceleration "Lateral acceleration in G";
+CM_ SG_ 772 Longitudinal_acceleration "Longitudinal acceleration in G";
+CM_ SG_ 772 Trig_Dist "Distance in metres";
+CM_ SG_ 771 DGPS "DGPS lock status
+
+1 = DGPS active 0 = DGPS not active";
+CM_ SG_ 771 Brake_trigger "Brake trigger switch status";
+CM_ SG_ 771 Vertical_Velocity "Vertical velocity in metres/sec"; 
+CM_ SG_ 771 Altitude "Altitude in metres
+
+ref WGS84";
+
+CM_ SG_ 770 Heading "Heading in degrees";
+CM_ SG_ 770 Velocity "Velocity (Knots) 1 Knot = 1.852 Km/h";
+CM_ SG_ 770 East_West "Hemisphere
+
+West = 0 East = 1";
+CM_ SG_ 770 Longitude "Longitude DDMM.MMMMM
+
+Example 5882246 = 0 Degrees 58.82246 minutes";
+
+CM_ BO_ 769 "VBOX Message 1";
+CM_ SG_ 769 North_South "Hemisphere North = 0 South = 1";
+CM_ SG_ 769 Latitude "Latitude DDMM.MMMMM
+
+Example 515924579 = 51 Degrees, 59.24579 Minutes";
+CM_ SG_ 769 Time "Time UTC";
+CM_ SG_ 769 Sats "Satelites in view";
+ 

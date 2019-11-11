@@ -1,0 +1,111 @@
+VERSION "20181224brianman"
+
+NS_:
+ CM_
+ VAL_
+
+BS_:
+
+BU_: CAN3 TBD
+
+BO_ 258 BMS_Current_And_Voltage_RWD: 6 CAN3
+ SG_ BMS_Pack_Voltage: 0|16@1+ (0.01,0) [0|0] "V" TBD
+ SG_ BMS_Pack_Current: 16|15@1- (0.1,0) [0|0] "A" TBD
+ SG_ BMS_Pack_Current_Unfiltered: 32|15@1- (0.05,0) [0|0] "A" TBD
+
+BO_ 262 Rear_Drive_Unit_Info: 8 CAN3
+ SG_ Motor_Speed: 32|16@1- (1,0) [0|0] "rpm" TBD
+ SG_ Pedal_Position: 48|8@1+ (0.4,0) [0|100] "%" TBD
+
+BO_ 278 Rear_Drive_Unit_Torque_Info: 6 CAN3
+ SG_ Torque_Estimate: 0|12@1- (1,0) [0|0] "Nm" TBD
+ SG_ Gear: 12|3@1+ (1,0) [1|4] "" TBD
+ SG_ Vehicle_Speed: 16|12@1+ (0.05,-25) [0|0] "mph" TBD
+ SG_ Gear_Request: 28|3@1+ (1,0) [1|4] "" TBD
+
+BO_ 340 Rear_Drive_Unit_Measurement: 8 CAN3
+ SG_ Pedal_Position_Sensor_A: 16|8@1+ (0.4,0) [0|100] "%" TBD
+ SG_ Pedal_Position_Sensor_B: 24|8@1+ (0.4,0) [0|100] "%" TBD
+ SG_ Rear_Torque: 40|13@1- (1,0) [0|0] "Nm" TBD
+
+BO_ 528 DC_DC_Converter_Status: 7 CAN3
+ SG_ Inlet_Temperature: 16|8@1- (0.5,40) [0|0] "C" TBD
+ SG_ Input_Power: 24|8@1+ (16,0) [0|0] "W" TBD
+ SG_ Output_Current: 32|8@1+ (1,0) [0|0] "A" TBD
+ SG_ Output_Voltage: 40|8@1+ (0.1,0) [0|0] "V" TBD
+
+BO_ 562 Battery_Power_Limits: 4 CAN3
+ SG_ Max_Regen_Power: 0|16@1+ (0.01,1) [0|0] "kW" TBD
+ SG_ Max_Discharge_Power: 16|16@1+ (0.01,1) [0|0] "kW" TBD
+
+BO_ 614 Rear_Drive_Unit_Power: 8 CAN3
+ SG_ Inverter: 0|8@1+ (0.1,0) [0|0] "V" TBD
+ SG_ Dissipation: 1|8@1+ (125,0) [0|0] "W" TBD
+ SG_ Mechanical_Power: 16|11@1- (0.5,0) [0|0] "kW" TBD
+ SG_ Stator_Current: 32|11@1+ (1,0) [0|0] "A" TBD
+ SG_ Drive_Power_Max: 44|14@1+ (1,1) [0|0] "kW" TBD
+ SG_ Regen_Power_Max: 56|8@1+ (4,-200) [0|0] "kW" TBD
+
+BO_ 770 Battery_SOC: 3 CAN3
+ SG_ SOC_Min: 0|10@1+ (0.01,0) [0|0] "%" TBD
+ SG_ SOC_UI: 10|10@1+ (0.01,0) [0|0] "%" TBD
+
+BO_ 854 Speed_Info: 8 CAN3
+ SG_ Drive_Inverter_System_State: 0|3@1+ (1,0) [0|4] "" TBD
+ SG_ Vehicle_Hold_State: 3|3@1+ (1,0) [0|7] "" TBD
+ SG_ Inverter_Ready: 7|1@1+ (1,0) [0|1] "" TBD
+ SG_ Regen_Light: 8|1@1+ (1,0) [0|1] "" TBD
+ SG_ Cruise_Control_Status: 12|4@1+ (1,0) [0|7] "" TBD
+ SG_ Speed_Analog: 16|12@1+ (0.1,0) [0|0] "mph" TBD
+ SG_ Speed_Unit_Setting: 23|1@1+ (1,0) [0|0] "" TBD
+ SG_ Cruise_Control_Speed: 24|9@1+ (0.5,0) [0|0] "mph" TBD
+ SG_ Speed_Digital: 40|8@1+ (1,0) [0|0] "mph or kph" TBD
+
+BO_ 898 Battery_Energy_Status: 8 CAN3
+ SG_ Nominal_Full_Pack_Energy: 0|10@1+ (0.1,0) [0|0] "kWh" TBD
+ SG_ Nominal_Energy_Remaining: 10|10@1+ (0.1,0) [0|0] "kWh" TBD
+ SG_ Expected_Energy_Remaining: 20|10@1+ (0.1,0) [0|0] "kWh" TBD
+ SG_ Ideal_Energy_Remaining: 30|10@1+ (0.1,0) [0|0] "kWh" TBD
+ SG_ Energy_To_Charge_Complete: 40|10@1+ (0.1,0) [0|0] "kWh" TBD
+ SG_ Energy_Buffer: 50|8@1+ (0.1,0) [0|0] "kWh" TBD
+
+BO_ 978 Battery_Lifetime_Energy_Stats: 8 CAN3
+ SG_ Discharge_Total: 0|32@1+ (1,0) [0|0] "Wh" TBD
+ SG_ Charge_Total: 32|32@1+ (1,0) [0|0] "Wh" TBD
+
+BO_ 1378 Battery_Odometer: 4 CAN3
+ SG_ Battery_Distance: 0|32@1+ (0.001,1) [0|0] "mi" TBD
+
+CM_ "Source http://skie.net/uploads/TeslaCAN/Tesla%20Model%20S%20CAN%20Deciphering%20-%20v0.1%20-%20by%20wk057.pdf";
+
+CM_ BO_ 258 "BMS Current and Voltage, RWD [100 Hz]";
+
+CM_ BO_ 262 "Rear drive unit info [100Hz]";
+
+CM_ BO_ 278 "Rear drive unit torque and status info [100Hz]";
+
+CM_ BO_ 340 "Rear drive unit measurement [100Hz]";
+
+CM_ BO_ 528 "DC-DC Converter Status [10Hz]";
+
+CM_ BO_ 562 "Battery power limits [10Hz]";
+
+CM_ BO_ 614 "Rear drive unit power info [100Hz]";
+
+CM_ BO_ 770 "Battery state of charge [1Hz]";
+
+CM_ BO_ 854 "Speed and cruise control status [10Hz]";
+
+CM_ BO_ 898 "Battery energy status [1Hz]";
+
+CM_ BO_ 978 "Battery lifetime energy stats [1Hz]";
+
+CM_ BO_ 1378 "Battery odometer [0.1 Hz]";
+
+VAL_ 278 Gear 1 "Park" 2 "Reverse" 3 "Neutral" 4 "Drive";
+VAL_ 278 Gear_Request 1 "Park" 2 "Reverse" 3 "Neutral" 4 "Drive";
+
+VAL_ 854 Drive_Inverter_System_State 0 "Unavailable" 1 "Standby" 2 "Fault" 3 "Abort" 4 "Enabled";
+VAL_ 854 Vehicle_Hold_State 0 "Unavailable" 1 "Standby" 2 "Blend In" 3 "Stand Still" 4 "Blend Out" 5 "Park" 6 "Fault" 7 "Init";
+VAL_ 854 Cruise_Control_Status 0 "Off" 1 "Standby" 2 "Enabled" 3 "Stand still" 4 "Override" 5 "Fault" 6 "Prefault" 7 "Precancel";
+VAL_ 854 Speed_Unit_Setting 0 "mph" 1 "kph";
